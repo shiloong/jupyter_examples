@@ -1,14 +1,14 @@
 name: vscode-binder
 channels:
   - conda-forge
-  - manimcommunity  # Manim社区版通道
+  - manimcommunity  # 添加Manim社区版通道（关键）
 dependencies:
   - numpy
   - python-build
   - jupyter-server-proxy
   - code-server >=3.2
-  # 添加Manim相关依赖
-  - manim=0.18.1  # 稳定版本
-  - ffmpeg  # 视频渲染
-  - texlive-core  # LaTeX公式支持
-  - pycairo  # 图形渲染
+  # Manim相关依赖（指定兼容版本）
+  - manim=0.18.1  # 稳定版本，避免最新版可能的兼容性问题
+  - ffmpeg=5.1    # 指定与Manim兼容的ffmpeg版本
+  - texlive-core  # 确保LaTeX支持
+  - pycairo       # 图形渲染依赖
